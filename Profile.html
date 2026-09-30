@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verse - Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styleEXPLORE.css">
+    <link rel="stylesheet" href="CSS/styleProfile.css">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo-group">
+            <div class="logo-wrap">
+                <img src="Assets/LOGO1.png" alt="Logo" class="logo logo1">
+                <img src="Assets/LOGO2.png" alt="Logo" class="logo logo2">
+            </div>
+            <h1>VERSE</h1>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="Workspace.html">Workspace</a>
+            <a href="Explore.html">Explore</a>
+        </nav>
+
+        <div class="header-right">
+            <form action="Explore.html" method="get" class="search-form">
+                <input type="search" name="q" placeholder="Search poems, authors, moods, themes...">
+                <button type="submit">Search</button>
+            </form>
+            <a href="Logout.html" class="icon-link">Logout</a>
+            <a href="Profile.html">
+                <img src="Assets/PROFILE.jpg" alt="Profile Image" class="profile-image">
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="profile">
+        <img src="Assets/PROFILE.jpg" alt="Profile Image" class="profile-photo">
+        <div class="profile-info">
+            <h2>Renzo Aquino</h2>
+            <p class="profile-handle">@renzo.writes</p>
+            <p class="profile-bio">Writes small poems about getting older, coffee, and the weather.
+            Always looking for the one line that says it all.</p>
+            <table class="profile-stats">
+                <tr>
+                    <td><strong>2</strong>Works</td>
+                    <td><strong>Bittersweet</strong>Favorite mood</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="discoveries">
+        <h2 class="discoveries__title">My works</h2>
+        <div class="shelf">
+      <article class="book mood--warm">
+        <span class="book__tag">Bittersweet</span>
+        <h3 class="book__title"><a href="ZoomIn.html">Instructions for Growing Older</a></h3>
+        <p class="book__quote">“Do not look at mirrors under harsh fluorescent light. Remember that your bones are ancient dust rehearsing a brief dance.”</p>
+        <p class="book__author">Renzo Aquino</p>
+      </article>
+      <article class="book mood--warm">
+        <img class="book__cover" src="Assets/PROFILE.jpg" alt="Cover photo for Letter to My Younger Self">
+        <span class="book__tag">Bittersweet</span>
+        <h3 class="book__title"><a href="ZoomIn.html">Letter to My Younger Self</a></h3>
+        <p class="book__quote">“You will survive the winter, and you will learn to drink your coffee without sugar.”</p>
+        <p class="book__author">Renzo Aquino</p>
+      </article>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

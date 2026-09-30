@@ -1,0 +1,397 @@
+/* ---------- basics ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ---------- header ---------- */
+header {
+    background: #efeded;
+    padding: 0 24px;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    gap: 40px;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo-wrap {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.logo-wrap .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: crossfade 6s infinite;
+}
+
+.logo-wrap .logo1 { animation-delay: 0s; }
+.logo-wrap .logo2 { animation-delay: 3s; }
+
+@keyframes crossfade {
+    0%, 40% { opacity: 1; }
+    50%, 90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h1 {
+    margin: 0;
+    color: #000000;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+    opacity: 0.7;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.search-form button {
+    margin-left: 6px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    background: #dddada;
+    color: #000000;
+    cursor: pointer;
+}
+
+.icon-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.icon-link:hover {
+    opacity: 0.7;
+}
+
+/* ---------- hero ---------- */
+.hero-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-image: url('../Assets/HEROBG.jpg');
+    background-size: cover;
+    background-position: center 0%;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    padding: 0 24px;
+}
+
+.hero-row h2 {
+    font-size: 2.4rem;
+    margin: 0 0 16px;
+}
+
+.hero-row p {
+    line-height: 1.6;
+}
+
+.logo-wrap-Hero{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    flex-shrink: 0;
+}
+
+.logo-wrap-Hero .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: crossfade 6s infinite;
+}
+
+.logo-wrap-Hero .logo1 { animation-delay: 0s; }
+.logo-wrap-Hero .logo2 { animation-delay: 3s; }
+
+/* buttons made from links */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.btn-light {
+    background: #efeded;
+    color: #000000;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* ---------- scrolling words ---------- */
+.word-scroll {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    perspective: 400px;
+    flex-shrink: 0;
+    width: 300px;
+}
+
+.word-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 50px 0 0;
+    text-align: right;
+    animation: scrollWords 10s linear infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes scrollWords {
+    from { transform: rotateX(25deg) translateY(0); }
+    to   { transform: rotateX(25deg) translateY(-50%); }
+}
+
+.word-list li {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #070707;
+    line-height: 1.8;
+    white-space: nowrap;
+}
+
+.blur-top,
+.blur-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.blur-top {
+    top: 0;
+    height: 38%;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+
+.blur-bottom {
+    bottom: 0;
+    height: 38%;
+    mask-image: linear-gradient(to top, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
+}
+
+.word-arrow {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 2rem;
+    z-index: 2;
+}
+
+/* ---------- sign up card ---------- */
+.auth-card {
+  width: 100%;
+  max-width: 432px;
+  margin: 60px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.auth-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.auth-title {
+  text-align: center;
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-field {
+  width: 100%;
+  height: 40px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+.btn-primary {
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  background: black;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.terms {
+  text-align: center;
+  color: #828282;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.terms-link {
+  color: black;
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 900px) {
+    .hero-row {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+    }
+
+    .logo-wrap-Hero {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-row td {
+        display: block;
+        width: 100%;
+    }
+
+    .word-scroll {
+        margin-left: 0;
+        height: 300px;
+        justify-content: center;
+    }
+
+    .word-list {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .word-arrow {
+        display: none;
+    }
+}
+
+/* header on small screens: let it wrap onto two rows */
+@media (max-width: 800px) {
+    .header-inner {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+        gap: 10px 20px;
+    }
+
+    .header-right {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .search-form {
+        flex: 1;
+    }
+
+    .search-form input {
+        width: 100%;
+        min-width: 0;
+    }
+}

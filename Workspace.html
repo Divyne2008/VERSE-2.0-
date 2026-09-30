@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verse - Workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styleEXPLORE.css">
+    <link rel="stylesheet" href="CSS/styleWORKSPACE.css">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo-group">
+            <div class="logo-wrap">
+                <img src="Assets/LOGO1.png" alt="Logo" class="logo logo1">
+                <img src="Assets/LOGO2.png" alt="Logo" class="logo logo2">
+            </div>
+            <h1>VERSE</h1>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="Workspace.html">Workspace</a>
+            <a href="Explore.html">Explore</a>
+        </nav>
+
+        <div class="header-right">
+            <form action="Explore.html" method="get" class="search-form">
+                <input type="search" name="q" placeholder="Search poems, authors, moods, themes...">
+                <button type="submit">Search</button>
+            </form>
+            <a href="Logout.html" class="icon-link">Logout</a>
+            <a href="Profile.html">
+                <img src="Assets/PROFILE.jpg" alt="Profile Image" class="profile-image">
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="workspace">
+
+    <form class="write-form" action="Explore.html">
+        <h2>Write something</h2>
+
+        <label for="title">Title</label>
+        <input type="text" id="title" placeholder="Give your piece a title" required>
+
+        <label for="mood">Mood</label>
+        <select id="mood">
+            <option>Melancholy</option>
+            <option>Romantic</option>
+            <option>Nature</option>
+            <option>Bittersweet</option>
+            <option>Quiet</option>
+        </select>
+
+        <label for="cover">Cover photo</label>
+        <input type="file" id="cover" accept="image/*">
+        <p class="hint">The photo you pick becomes the cover of your book card.</p>
+
+        <label for="text">Your writing</label>
+        <textarea id="text" placeholder="Start writing here..."></textarea>
+
+        <button type="submit">Publish</button>
+    </form>
+
+    <aside class="write-side">
+        <h2>Your books</h2>
+        <div class="shelf">
+      <article class="book mood--melancholy">
+        <img class="book__cover" src="Assets/HEROBG.jpg" alt="Cover photo for After the Rain">
+        <span class="book__tag">Draft</span>
+        <h3 class="book__title"><a href="ZoomIn.html">After the Rain</a></h3>
+        <p class="book__quote">“The city smelled like wet concrete and forgotten promises.”</p>
+        <p class="book__author">Mara Santos</p>
+      </article>
+      <article class="book mood--warm">
+        <img class="book__cover" src="Assets/PROFILE.jpg" alt="Cover photo for Letter to My Younger Self">
+        <span class="book__tag">Draft</span>
+        <h3 class="book__title"><a href="ZoomIn.html">Letter to My Younger Self</a></h3>
+        <p class="book__quote">“You will survive the winter, and you will learn to drink your coffee without sugar.”</p>
+        <p class="book__author">Renzo Aquino</p>
+      </article>
+        </div>
+    </aside>
+
+</main>
+
+</body>
+</html>

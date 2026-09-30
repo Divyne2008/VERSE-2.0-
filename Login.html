@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an account</title>
+  <link rel="stylesheet" href="CSS/styleLOGIN.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nico+Moji&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <div class="logo">VERSE</div>
+
+    <div class="illustration">
+      <img src="Assets/LOGO2.png" alt="" />
+    </div>
+
+    <div class="signup-card">
+      <div class="heading-group">
+        <div class="title">Create an account</div>
+        <div class="subtitle">Enter your email to sign up for this website</div>
+      </div>
+
+      <!-- no name="" on the input yet, add it when there is a backend -->
+      <form class="form-group" action="Explore.html">
+        <input class="email-input" type="email" placeholder="email@domain.com" aria-label="Email" required>
+        <button class="signup-btn" type="submit">Sign up with email</button>
+      </form>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-text">or continue with</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <button class="google-btn" type="button"><span class="google-icon">G</span> Google</button>
+
+      <div class="terms">
+        <span class="terms-muted">By clicking continue, you agree to our </span><span class="terms-link">Terms of Service</span><span class="terms-muted"> and </span><span class="terms-link">Privacy Policy</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

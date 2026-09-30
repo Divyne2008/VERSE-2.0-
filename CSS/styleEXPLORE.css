@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+}
+
+/* colours and fonts used by the book cards */
+:root {
+  --serif: 'Cormorant Garamond', serif;
+  --sans: 'Inter', sans-serif;
+  --ink: #2b2d2f;
+  --paper: #fffdf8;
+  --line: #d9d6d0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+}
+
+/* ---------- header ---------- */
+header {
+    background: #efeded;
+    padding: 0 24px;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    gap: 40px;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo-wrap {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.logo-wrap .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: crossfade 6s infinite;
+}
+
+.logo-wrap .logo1 { animation-delay: 0s; }
+.logo-wrap .logo2 { animation-delay: 3s; }
+
+@keyframes crossfade {
+    0%, 40% { opacity: 1; }
+    50%, 90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h1 {
+    margin: 0;
+    color: #000000;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+    opacity: 0.7;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.search-form button {
+    margin-left: 6px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    background: #dddada;
+    color: #000000;
+    cursor: pointer;
+}
+
+.icon-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.icon-link:hover {
+    opacity: 0.7;
+}
+
+/* mood colour pairs: --cover (background) / --accent (text + border) */
+.mood--love       { --cover: #F0E1E4; --accent: #8C5863; }
+.mood--melancholy { --cover: #E6E4F0; --accent: #5F588C; }
+.mood--nature     { --cover: #E2ECE4; --accent: #4A6B53; }
+.mood--warm       { --cover: #F1EAD8; --accent: #8C7A4A; }
+.mood--neutral    { --cover: #DDDCD9; --accent: #424240; }
+
+/* ---------- Discoveries ---------- */
+.discoveries { padding: 32px 120px 80px; }
+
+.discoveries__title {
+  margin: 0 0 32px;
+  font: 600 36px var(--serif);
+}
+
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+/* ---------- Book (simple flat card) ---------- */
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 340px;
+  padding: 20px;
+  background: var(--cover);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* the photo cover - only shows if the book has an <img class="book__cover"> */
+.book__cover {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.book__tag {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+  font: 700 10px var(--sans);
+  text-transform: uppercase;
+}
+
+.book__title {
+  margin: 0;
+  padding: 12px;
+  background: var(--paper);
+  text-align: center;
+  font: 600 22px/1.2 var(--serif);
+}
+
+.book__title a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.book__title a:hover {
+  color: var(--accent);
+}
+
+.book__quote {
+  flex: 1;
+  margin: 0;
+  font: italic 400 16px/1.5 var(--serif);
+}
+
+.book__author {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--accent);
+  color: var(--accent);
+  font: 500 12px var(--sans);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 800px) {
+  .discoveries { padding-left: 24px; padding-right: 24px; }
+  .discoveries__title { font-size: 30px; }
+}
+
+/* header on small screens: let it wrap onto two rows */
+@media (max-width: 800px) {
+    .header-inner {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+        gap: 10px 20px;
+    }
+
+    .header-right {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .search-form {
+        flex: 1;
+    }
+
+    .search-form input {
+        width: 100%;
+        min-width: 0;
+    }
+}
